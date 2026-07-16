@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Assimétrico — Teste</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+        background: #1a1a1a;
+        color: #eee;
+        padding: 32px;
+        min-height: 100vh;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        max-width: 900px;
+        margin: 0 auto 24px;
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      button {
+        font: inherit;
+        font-size: 14px;
+        padding: 8px 16px;
+        border: 1px solid #555;
+        border-radius: 8px;
+        background: #2a2a2a;
+        color: #eee;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      button:hover {
+        background: #383838;
+      }
+
+      /* ---- O GRID ASSIMÉTRICO ---- */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+        grid-auto-rows: 110px; /* altura base de cada linha */
+        gap: 14px;
+        grid-auto-flow: dense; /* preenche buracos automaticamente */
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .item {
+        border-radius: 12px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.75);
+      }
+      .item small {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 1.4;
+        opacity: 0.8;
+      }
+
+      /* Cada item ocupa um espaço diferente = assimetria */
+      .item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .item:nth-child(2) {
+        grid-column: span 2;
+      }
+      .item:nth-child(3) {
+        grid-row: span 2;
+      }
+      .item:nth-child(4) {
+        grid-column: span 1;
+      }
+      .item:nth-child(5) {
+        grid-column: span 1;
+      }
+      .item:nth-child(6) {
+        grid-column: span 2;
+      }
+      .item:nth-child(7) {
+        grid-column: span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Grid assimétrico — teste</h1>
+      <button id="shuffle">↻ Sortear cores</button>
+    </header>
+
+    <div class="grid" id="grid">
+      <div class="item">A <small>span 2 × 2</small></div>
+      <div class="item">B <small>span 2 × 1</small></div>
+      <div class="item">C <small>span 1 × 2</small></div>
+      <div class="item">D <small>span 1 × 1</small></div>
+      <div class="item">D <small>span 1 × 1</small></div>
+
+      <div class="item">E <small>span 1 × 1</small></div>
+      <div class="item">E <small>span 1 × 1</small></div>
+
+      <div class="item">F <small>span 2 × 1</small></div>
+      <div class="item">G <small>span 2 × 1</small></div>
+    </div>
+
+    <script>
+      // Gera uma cor HSL aleatória e legível (saturação e luz controladas)
+      function randomColor() {
+        const h = Math.floor(Math.random() * 360);
+        const s = 55 + Math.floor(Math.random() * 30); // 55–85%
+        const l = 60 + Math.floor(Math.random() * 20); // 60–80%
+        return `hsl(${h}, ${s}%, ${l}%)`;
+      }
+
+      function shuffle() {
+        document.querySelectorAll(".item").forEach((el) => {
+          el.style.background = randomColor();
+        });
+      }
+
+      document.getElementById("shuffle").addEventListener("click", shuffle);
+      shuffle(); // pinta ao carregar
+    </script>
+  </body>
+</html>

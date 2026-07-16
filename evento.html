@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos — Casa Mandica</title>
+    <meta
+      name="description"
+      content="Realize o seu evento na Casa Mandica, em Eusébio (CE)."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body>
+    <!-- wave shape defs (single shape, reused by each divider via CSS color) -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <g id="ev-wave">
+          <path
+            opacity="0.16"
+            fill="currentColor"
+            d="M0,44 C300,8 520,72 760,50 C1010,30 1240,86 1440,38 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.32"
+            fill="currentColor"
+            d="M0,72 C180,100 380,38 600,62 C840,88 1060,28 1280,58 C1356,68 1410,62 1440,72 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.58"
+            fill="currentColor"
+            d="M0,96 C150,74 300,108 480,92 C680,74 880,112 1080,92 C1244,76 1360,100 1440,88 L1440,140 L0,140 Z"
+          />
+          <path
+            fill="currentColor"
+            d="M0,112 C360,130 560,82 820,100 C1060,116 1280,124 1440,102 L1440,140 L0,140 Z"
+          />
+        </g>
+      </defs>
+    </svg>
+
+    <!-- NAV -->
+    <section id="header" class="header"></section>
+
+    <!-- HERO -->
+    <header class="ev-hero">
+      <div class="wrap">
+        <a href="index.html#eventos" class="ev-back reveal"
+          >&larr; Todos os eventos</a
+        >
+        <div class="ev-hero-inner reveal">
+          <h1 class="ev-title" id="evTitle"></h1>
+          <p class="ev-tag" id="evTag"></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="wsep wave-ev-1" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#ev-wave" />
+      </svg>
+    </div>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="wrap center gallery-head">
+        <p class="eyebrow reveal">Galeria</p>
+      </div>
+      <div class="wrap-wide">
+        <div class="gallery-grid reveal" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <div class="wsep wave-ev-2" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#ev-wave" />
+      </svg>
+    </div>
+
+    <!-- CTA -->
+    <section class="ev-cta">
+      <div class="wrap">
+        <p class="eyebrow reveal" style="color: var(--sage-light)">
+          Vamos começar
+        </p>
+        <h2 class="title reveal" id="evCtaTitle">Realize o seu evento aqui</h2>
+        <p class="lead reveal" style="max-width: 50ch; margin: 1em auto 0">
+          Verifique a disponibilidade para a sua data e venha sentir
+          pessoalmente por que a Casa Mandica é o cenário perfeito para o seu
+          momento.
+        </p>
+        <div class="btn-row reveal">
+          <a
+            href="https://wa.me/5585999236600?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20disponibilidade%20da%20Casa%20Mandica%20para%20o%20meu%20evento."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-light"
+            >Verificar disponibilidade</a
+          >
+          <a href="tour.html" class="btn btn-line-light"
+            >Fazer o tour virtual</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="wsep wave-ev-3" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#ev-wave" />
+      </svg>
+    </div>
+
+    <!-- OUTROS TIPOS -->
+    <section class="others">
+      <div class="wrap center">
+        <p class="eyebrow reveal">Explore mais</p>
+        <h2 class="title reveal">Outros tipos de evento</h2>
+        <div class="others-grid reveal" id="othersGrid"></div>
+      </div>
+    </section>
+
+    <div class="wsep wave-ev-4" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#ev-wave" />
+      </svg>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div>
+          <img src="assets/logo.png" alt="Casa Mandica" class="footer-logo" />
+          <p>
+            Espaço para eventos entre árvores, em Eusébio — Ceará. Onde a
+            natureza recebe os seus melhores momentos.
+          </p>
+        </div>
+        <div class="footer-col">
+          <p class="foot-h">Navegação</p>
+          <a href="index.html#espacos">Os Espaços</a>
+          <a href="index.html#eventos">Eventos</a>
+          <a href="index.html#tour">Tour Virtual</a>
+          <a href="index.html#contato">Contato</a>
+        </div>
+        <div class="footer-col">
+          <p class="foot-h">Contato</p>
+          <a href="https://wa.me/5585999236600" target="_blank" rel="noopener"
+            >(85) 99923-6600</a
+          >
+          <a
+            href="https://www.instagram.com/casamandica/"
+            target="_blank"
+            rel="noopener"
+            >@casamandica</a
+          >
+          <a
+            href="https://www.google.com/maps?q=Rua%20Vicente%20Leit%C3%A3o%20729%20Eus%C3%A9bio%20CE"
+            target="_blank"
+            rel="noopener"
+            >Como chegar</a
+          >
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span
+          >© <span id="year"></span> Casa Mandica · Todos os direitos
+          reservados</span
+        >
+        <a href="tour.html" target="_blank" rel="noopener">Tour Virtual 360°</a>
+      </div>
+    </footer>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <button class="lb-close" id="lbClose" aria-label="Fechar galeria">
+        &times;
+      </button>
+      <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">
+        &#8249;
+      </button>
+      <div class="lb-stage">
+        <img class="lb-img" id="lbImg" alt="" />
+        <div class="lb-cap">
+          <span id="lbTitle"></span><span class="ct" id="lbCount"></span>
+        </div>
+      </div>
+      <button class="lb-nav lb-next" id="lbNext" aria-label="Próxima">
+        &#8250;
+      </button>
+    </div>
+
+    <script src="js/events.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/evento.js"></script>
+  </body>
+</html>

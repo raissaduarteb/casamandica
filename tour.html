@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour Virtual 360° — Casa Mandica</title>
+    <meta
+      name="description"
+      content="Faça um tour virtual em 360° pelos espaços da Casa Mandica, em Eusébio (CE). Conheça cada cantinho antes da sua visita."
+    />
+    <link rel="stylesheet" href="css/site.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        background: var(--ink);
+        overflow: hidden;
+      }
+      .tv-bar {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px var(--pad);
+        background: rgba(251, 250, 246, 0.96);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+        z-index: 5;
+      }
+      .tv-brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        min-width: 0;
+      }
+      .tv-brand img {
+        height: 38px;
+        width: auto;
+      }
+      .tv-brand .tag {
+        font-size: 0.66rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--olive);
+        font-weight: 600;
+        border-left: 1px solid var(--line-2);
+        padding-left: 16px;
+        white-space: nowrap;
+      }
+      @media (max-width: 620px) {
+        .tv-brand .tag {
+          display: none;
+        }
+        .tv-brand img {
+          height: 32px;
+        }
+      }
+      .tv-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 0 0 auto;
+      }
+      .tv-actions .btn {
+        padding: 0.72em 1.3em;
+        font-size: 0.7rem;
+      }
+      @media (max-width: 520px) {
+        .tv-actions .back {
+          display: none;
+        }
+      }
+      .tv-stage {
+        flex: 1 1 auto;
+        position: relative;
+        background: #000;
+        min-height: 0;
+      }
+      .tv-stage iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+      }
+      .tv-loading {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        color: #cdd3c2;
+        background:
+          radial-gradient(
+            120% 90% at 50% 30%,
+            rgba(179, 201, 169, 0.22),
+            transparent 60%
+          ),
+          var(--sage-dark);
+      }
+      .tv-loading .ring {
+        width: 42px;
+        height: 42px;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .tv-loading .lt {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.3rem;
+      }
+      .tv-hint {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        z-index: 4;
+        background: rgba(56, 64, 47, 0.8);
+        color: #fff;
+        font-size: 0.74rem;
+        letter-spacing: 0.06em;
+        padding: 0.6em 1.2em;
+        border-radius: 999px;
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+        pointer-events: none;
+        animation:
+          fadeHint 0.6s ease both,
+          hideHint 0.6s ease 6s forwards;
+      }
+      @keyframes fadeHint {
+        from {
+          opacity: 0;
+          transform: translate(-50%, 8px);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, 0);
+        }
+      }
+      @keyframes hideHint {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      /* Mobile: the tour's own strip of space names is unreadable on a narrow
+         screen, so it gets hidden and replaced by this single picker. */
+      .tv-picker {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 4;
+        display: none;
+        padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+        background: linear-gradient(
+          to top,
+          rgba(56, 64, 47, 0.92),
+          rgba(56, 64, 47, 0)
+        );
+      }
+      .tv-picker button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 0.95em 1.2em;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(251, 250, 246, 0.97);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+      }
+      .tv-picker button svg {
+        flex: 0 0 auto;
+        transition: transform 0.25s;
+      }
+      .tv-sheet[open] ~ .tv-picker button svg {
+        transform: rotate(180deg);
+      }
+
+      .tv-sheet {
+        position: absolute;
+        inset: 0;
+        z-index: 6;
+        display: none;
+      }
+      .tv-sheet[open] {
+        display: block;
+      }
+      .tv-sheet .scrim {
+        position: absolute;
+        inset: 0;
+        background: rgba(28, 32, 23, 0.55);
+        backdrop-filter: blur(3px);
+        animation: fadeIn 0.22s ease both;
+      }
+      .tv-sheet .panel {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-height: 82%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        background: var(--paper);
+        border-radius: 20px 20px 0 0;
+        padding: 8px 0 calc(10px + env(safe-area-inset-bottom));
+        animation: sheetUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      .tv-sheet .grip {
+        width: 42px;
+        height: 4px;
+        border-radius: 999px;
+        background: var(--line-2);
+        margin: 8px auto 4px;
+      }
+      .tv-sheet h2 {
+        margin: 0;
+        padding: 10px 22px 12px;
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.35rem;
+        color: var(--ink);
+        border-bottom: 1px solid var(--line);
+      }
+      .tv-sheet .opt {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 1.05em 22px;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        background: none;
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      .tv-sheet .opt:active {
+        background: var(--paper-3);
+      }
+      .tv-sheet .opt[aria-current="true"] {
+        color: var(--sage-dark);
+      }
+      .tv-sheet .opt[aria-current="true"]::after {
+        content: " ·";
+      }
+      @keyframes sheetUp {
+        from {
+          transform: translateY(100%);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+      }
+
+      /* .tv-picker só aparece quando a faixa do tour não cabe — quem decide é
+         o tour-menu.js, que mede o iframe de verdade. */
+      .tv-picker[data-on] {
+        display: block;
+      }
+      .tv-stage:has(.tv-picker[data-on]) .tv-hint {
+        bottom: 84px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .tv-sheet .panel,
+        .tv-sheet .scrim {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="tv-bar">
+      <a href="index.html" class="tv-brand" aria-label="Casa Mandica">
+        <img src="assets/logo.png" alt="Casa Mandica" />
+        <span class="tag">Tour Virtual 360°</span>
+      </a>
+      <div class="tv-actions">
+        <a href="index.html" class="btn btn-ghost back">Voltar ao site</a>
+        <a
+          href="https://wa.me/5585999236600?text=Ol%C3%A1!%20Fiz%20o%20tour%20virtual%20e%20gostaria%20de%20agendar%20uma%20visita%20%C3%A0%20Casa%20Mandica."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+          >Faça sua reserva</a
+        >
+      </div>
+    </header>
+    <main class="tv-stage">
+      <div class="tv-loading" id="tvLoading">
+        <div class="ring"></div>
+        <div class="lt">Preparando o seu passeio…</div>
+      </div>
+      <iframe
+        id="tvFrame"
+        src="tour/index.htm"
+        title="Tour virtual 360° da Casa Mandica"
+        allow="fullscreen; accelerometer; gyroscope; xr-spatial-tracking"
+        allowfullscreen
+      ></iframe>
+      <div class="tv-hint">
+        Arraste para explorar · siga as setas para caminhar
+      </div>
+
+      <div class="tv-sheet" id="tvSheet">
+        <div class="scrim" data-close></div>
+        <div class="panel" role="dialog" aria-modal="true" aria-label="Escolha o espaço">
+          <div class="grip"></div>
+          <h2>Escolha o espaço</h2>
+          <div id="tvOpts"></div>
+        </div>
+      </div>
+
+      <div class="tv-picker" id="tvPicker">
+        <button id="tvPickerBtn" type="button" aria-haspopup="dialog" aria-expanded="false">
+          <span id="tvPickerLbl">Escolha o espaço</span>
+          <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+            <path d="M1 8L7 2l6 6" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </main>
+    <script src="js/tour-menu.js"></script>
+    <script>
+      var f = document.getElementById("tvFrame"),
+        l = document.getElementById("tvLoading");
+      function hide() {
+        if (l) {
+          l.style.transition = "opacity .5s";
+          l.style.opacity = "0";
+          setTimeout(function () {
+            if (l) l.style.display = "none";
+          }, 500);
+        }
+      }
+      if (f) f.addEventListener("load", hide);
+      setTimeout(hide, 4000);
+
+      /* ---- Seletor de espaços (mobile) ----
+         Os mesmos 8 destinos do menu do tour. O índice é o do mainPlayList —
+         se mexer no menu dentro do 3DVista, reconferir aqui. */
+      var SPACES = [
+        { label: "Início", i: 0 },
+        { label: "Espaço Céu", i: 47 },
+        { label: "Casa de Operações", i: 26 },
+        { label: "Suíte", i: 35 },
+        { label: "Área de Serviço", i: 38 },
+        { label: "Quintal Mandica", i: 21 },
+        { label: "Gramado", i: 1 },
+        { label: "Banheiros", i: 12 },
+      ];
+      var sheet = document.getElementById("tvSheet"),
+        picker = document.getElementById("tvPicker"),
+        pickerBtn = document.getElementById("tvPickerBtn"),
+        pickerLbl = document.getElementById("tvPickerLbl"),
+        opts = document.getElementById("tvOpts");
+
+      function player() {
+        try {
+          return f.contentWindow.tdvplayer;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      /* A faixa de nomes do tour cabe? Se não, ela some e o seletor entra. */
+      var syncTourMenu = TourMenu.watch(f, function (stripFits) {
+        if (stripFits) {
+          picker.removeAttribute("data-on");
+          closeSheet();
+        } else {
+          picker.setAttribute("data-on", "");
+        }
+      });
+
+      function openSheet() {
+        sheet.setAttribute("open", "");
+        pickerBtn.setAttribute("aria-expanded", "true");
+        var first = opts.querySelector(".opt");
+        if (first) first.focus();
+      }
+      function closeSheet() {
+        sheet.removeAttribute("open");
+        pickerBtn.setAttribute("aria-expanded", "false");
+      }
+
+      function go(s) {
+        var p = player();
+        if (!p) return;
+        p.getById("rootPlayer").setMainMediaByIndex(s.i);
+        pickerLbl.textContent = s.label;
+        [].forEach.call(opts.children, function (b) {
+          b.setAttribute("aria-current", +b.dataset.i === s.i);
+        });
+        closeSheet();
+      }
+
+      SPACES.forEach(function (s) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "opt";
+        b.textContent = s.label;
+        b.dataset.i = s.i;
+        b.addEventListener("click", function () {
+          go(s);
+        });
+        opts.appendChild(b);
+      });
+
+      pickerBtn.addEventListener("click", function () {
+        sheet.hasAttribute("open") ? closeSheet() : openSheet();
+      });
+      sheet.addEventListener("click", function (e) {
+        if (e.target.hasAttribute("data-close")) closeSheet();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && sheet.hasAttribute("open")) closeSheet();
+      });
+      /* se o player já estava pronto antes do watch entrar */
+      f.addEventListener("load", function () {
+        setTimeout(syncTourMenu, 1200);
+      });
+    </script>
+  </body>
+</html>

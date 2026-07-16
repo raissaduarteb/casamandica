@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casa Mandica — Espaço para Eventos · Eusébio, CE</title>
+    <meta
+      name="description"
+      content="Casa Mandica é um espaço para eventos em Eusébio (CE) com três cenários únicos: a Casa de Operações colonial, o arborizado Espaço Céu e o encantador Quintal Mandica. Casamentos, 15 anos, aniversários e festas infantis ao ar livre."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body>
+    <!-- wave shape defs (separate ids so each wave can have independent color via CSS variables) -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <!-- base wave shapes duplicated into individually addressable groups -->
+        <g id="wave-1">
+          <path
+            opacity="0.16"
+            fill="currentColor"
+            d="M0,44 C300,8 520,72 760,50 C1010,30 1240,86 1440,38 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.32"
+            fill="currentColor"
+            d="M0,72 C180,100 380,38 600,62 C840,88 1060,28 1280,58 C1356,68 1410,62 1440,72 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.58"
+            fill="currentColor"
+            d="M0,96 C150,74 300,108 480,92 C680,74 880,112 1080,92 C1244,76 1360,100 1440,88 L1440,140 L0,140 Z"
+          />
+          <path
+            fill="currentColor"
+            d="M0,112 C360,130 560,82 820,100 C1060,116 1280,124 1440,102 L1440,140 L0,140 Z"
+          />
+        </g>
+        <g id="wave-2">
+          <path
+            opacity="0.16"
+            fill="currentColor"
+            d="M0,44 C300,8 520,72 760,50 C1010,30 1240,86 1440,38 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.32"
+            fill="currentColor"
+            d="M0,72 C180,100 380,38 600,62 C840,88 1060,28 1280,58 C1356,68 1410,62 1440,72 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.58"
+            fill="currentColor"
+            d="M0,96 C150,74 300,108 480,92 C680,74 880,112 1080,92 C1244,76 1360,100 1440,88 L1440,140 L0,140 Z"
+          />
+          <path
+            fill="currentColor"
+            d="M0,112 C360,130 560,82 820,100 C1060,116 1280,124 1440,102 L1440,140 L0,140 Z"
+          />
+        </g>
+        <g id="wave-3">
+          <path
+            opacity="0.16"
+            fill="currentColor"
+            d="M0,44 C300,8 520,72 760,50 C1010,30 1240,86 1440,38 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.32"
+            fill="currentColor"
+            d="M0,72 C180,100 380,38 600,62 C840,88 1060,28 1280,58 C1356,68 1410,62 1440,72 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.58"
+            fill="currentColor"
+            d="M0,96 C150,74 300,108 480,92 C680,74 880,112 1080,92 C1244,76 1360,100 1440,88 L1440,140 L0,140 Z"
+          />
+          <path
+            fill="currentColor"
+            d="M0,112 C360,130 560,82 820,100 C1060,116 1280,124 1440,102 L1440,140 L0,140 Z"
+          />
+        </g>
+        <g id="wave-4">
+          <path
+            opacity="0.16"
+            fill="currentColor"
+            d="M0,44 C300,8 520,72 760,50 C1010,30 1240,86 1440,38 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.32"
+            fill="currentColor"
+            d="M0,72 C180,100 380,38 600,62 C840,88 1060,28 1280,58 C1356,68 1410,62 1440,72 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.58"
+            fill="currentColor"
+            d="M0,96 C150,74 300,108 480,92 C680,74 880,112 1080,92 C1244,76 1360,100 1440,88 L1440,140 L0,140 Z"
+          />
+          <path
+            fill="currentColor"
+            d="M0,112 C360,130 560,82 820,100 C1060,116 1280,124 1440,102 L1440,140 L0,140 Z"
+          />
+        </g>
+        <g id="wave-5">
+          <path
+            opacity="0.16"
+            fill="currentColor"
+            d="M0,44 C300,8 520,72 760,50 C1010,30 1240,86 1440,38 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.32"
+            fill="currentColor"
+            d="M0,72 C180,100 380,38 600,62 C840,88 1060,28 1280,58 C1356,68 1410,62 1440,72 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.58"
+            fill="currentColor"
+            d="M0,96 C150,74 300,108 480,92 C680,74 880,112 1080,92 C1244,76 1360,100 1440,88 L1440,140 L0,140 Z"
+          />
+          <path
+            fill="currentColor"
+            d="M0,112 C360,130 560,82 820,100 C1060,116 1280,124 1440,102 L1440,140 L0,140 Z"
+          />
+        </g>
+        <g id="wave-6">
+          <path
+            opacity="0.16"
+            fill="currentColor"
+            d="M0,44 C300,8 520,72 760,50 C1010,30 1240,86 1440,38 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.32"
+            fill="currentColor"
+            d="M0,72 C180,100 380,38 600,62 C840,88 1060,28 1280,58 C1356,68 1410,62 1440,72 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.58"
+            fill="currentColor"
+            d="M0,96 C150,74 300,108 480,92 C680,74 880,112 1080,92 C1244,76 1360,100 1440,88 L1440,140 L0,140 Z"
+          />
+          <path
+            fill="currentColor"
+            d="M0,112 C360,130 560,82 820,100 C1060,116 1280,124 1440,102 L1440,140 L0,140 Z"
+          />
+        </g>
+        <g id="wave-7">
+          <path
+            opacity="0.16"
+            fill="currentColor"
+            d="M0,44 C300,8 520,72 760,50 C1010,30 1240,86 1440,38 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.32"
+            fill="currentColor"
+            d="M0,72 C180,100 380,38 600,62 C840,88 1060,28 1280,58 C1356,68 1410,62 1440,72 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.58"
+            fill="currentColor"
+            d="M0,96 C150,74 300,108 480,92 C680,74 880,112 1080,92 C1244,76 1360,100 1440,88 L1440,140 L0,140 Z"
+          />
+          <path
+            fill="currentColor"
+            d="M0,112 C360,130 560,82 820,100 C1060,116 1280,124 1440,102 L1440,140 L0,140 Z"
+          />
+        </g>
+        <g id="wave-8">
+          <path
+            opacity="0.16"
+            fill="currentColor"
+            d="M0,44 C300,8 520,72 760,50 C1010,30 1240,86 1440,38 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.32"
+            fill="currentColor"
+            d="M0,72 C180,100 380,38 600,62 C840,88 1060,28 1280,58 C1356,68 1410,62 1440,72 L1440,140 L0,140 Z"
+          />
+          <path
+            opacity="0.58"
+            fill="currentColor"
+            d="M0,96 C150,74 300,108 480,92 C680,74 880,112 1080,92 C1244,76 1360,100 1440,88 L1440,140 L0,140 Z"
+          />
+          <path
+            fill="currentColor"
+            d="M0,112 C360,130 560,82 820,100 C1060,116 1280,124 1440,102 L1440,140 L0,140 Z"
+          />
+        </g>
+      </defs>
+    </svg>
+
+    <section id="header" class="header"></section>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="topo">
+      <div class="hero-media" id="heroMedia" data-parallax="0.18">
+        <img
+          src="photos/ceu-arcos-casa.jpg"
+          alt="Arcos de pedra e a casa colonial da Casa Mandica entre o gramado e as árvores"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="hero-scrim"></div>
+      <div class="hero-inner wrap">
+        <div class="hero-text" data-stagger>
+          <p class="hero-eyebrow reveal">Eusébio · Ceará</p>
+          <h1
+            class="hero-title script reveal"
+            style="max-width: 90vw; line-height: 0.95; letter-spacing: 1.1px"
+          >
+            Casa Mandica
+          </h1>
+          <p class="hero-sub reveal">
+            Onde a natureza recebe os seus melhores momentos.
+          </p>
+          <p class="hero-lead reveal">
+            Três espaços únicos e complementares, com o charme de uma casa entre
+            árvores, para celebrações ao ar livre que ficam para sempre na
+            memória.
+          </p>
+          <div class="hero-cta reveal">
+            <a
+              href="https://wa.me/5585999236600?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20%C3%A0%20Casa%20Mandica."
+              target="_blank"
+              rel="noopener"
+              class="btn btn-light"
+              >Faça sua reserva</a
+            >
+            <a href="#tour" class="btn btn-line-light">Fazer o tour virtual</a>
+          </div>
+        </div>
+        <div class="hero-art reveal reveal-r" aria-hidden="true">
+          <div class="hero-arch-frame">
+            <img src="photos/festa-baloes-noite.jpg" alt="" />
+          </div>
+          <span class="hero-arch-outline"></span>
+          <img class="hero-accent" src="assets/palms.png" alt="" />
+        </div>
+      </div>
+      <div class="hero-strip">
+        <div class="row">
+          <div class="hstat"><b>3</b><span>Espaços únicos</span></div>
+          <div class="hstat-div"></div>
+          <div class="hstat"><b>+500</b><span>Convidados</span></div>
+          <div class="hstat-div"></div>
+          <div class="hstat"><b>100%</b><span>Ao ar livre</span></div>
+        </div>
+      </div>
+    </header>
+    <div class="wsep wave-1" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#wave-1" />
+      </svg>
+    </div>
+
+    <!-- ============ INTRO ============ -->
+    <section class="intro">
+      <div class="wrap">
+        <div class="ornament reveal">
+          <span class="ln"></span><span class="ar"></span
+          ><span class="ln"></span>
+        </div>
+        <p class="big reveal">
+          Um respiro de verde a poucos minutos de Fortaleza, feito para receber
+          <em>histórias que merecem ser celebradas</em>.
+        </p>
+        <p class="sign reveal">Casa Mandica · Eusébio — CE</p>
+      </div>
+    </section>
+
+    <div class="wsep wave-2" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#wave-2" />
+      </svg>
+    </div>
+
+    <!-- ============ ESPAÇOS ============ -->
+    <section id="espacos" class="espacos">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow reveal">Conheça nossos ambientes</p>
+          <h2 class="title reveal">Três espaços, uma só casa</h2>
+          <p class="lead reveal">
+            Cada ambiente tem a sua personalidade — e juntos dão conta de
+            qualquer celebração, do mais intimista ao mais grandioso.
+          </p>
+        </div>
+
+        <article class="espaco">
+          <div class="espaco-media reveal reveal-l" data-space="casa"></div>
+          <div class="espaco-text reveal reveal-r">
+            <p class="idx">01</p>
+            <span class="tag">Apoio &amp; conforto</span>
+            <h3>Casa de Operações</h3>
+            <p>
+              Uma casa em estilo colonial com varanda deslumbrante — o apoio
+              perfeito para qualquer evento. Gramado excelente para eventos.
+            </p>
+            <ul class="amen">
+              <li>Suíte exclusiva</li>
+              <li>Banheiros para convidados</li>
+              <li>Lounge e Varanda Colonial</li>
+              <li>Cozinha industrial</li>
+              <li>Depósito de apoio</li>
+              <li>Gramado verdinho</li>
+            </ul>
+            <a
+              href="https://wa.me/5585999236600?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Casa%20de%20Opera%C3%A7%C3%B5es."
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              >Quero conhecer</a
+            >
+          </div>
+        </article>
+
+        <article class="espaco rev">
+          <div class="espaco-media reveal reveal-r" data-space="ceu"></div>
+          <div class="espaco-text reveal reveal-l">
+            <p class="idx">02</p>
+            <span class="tag">A céu aberto</span>
+            <h3>Espaço Céu</h3>
+            <p>
+              Um espaço arborizado a céu aberto, com charmosos arcos de pedra
+              que dão as boas-vindas aos convidados. O cenário ideal para
+              celebrações memoráveis sob as estrelas.
+            </p>
+            <ul class="amen">
+              <li>Arcos de entrada em pedra</li>
+              <li>Palco coberto por caramanchões</li>
+              <li>Ideal para montar a decoração</li>
+              <li>Pode virar auditório</li>
+              <li>Totalmente arborizado</li>
+              <li>Gramado amplo</li>
+            </ul>
+            <a
+              href="https://wa.me/5585999236600?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Espa%C3%A7o%20C%C3%A9u."
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              >Quero conhecer</a
+            >
+          </div>
+        </article>
+
+        <article class="espaco">
+          <div class="espaco-media reveal reveal-l" data-space="quintal"></div>
+          <div class="espaco-text reveal reveal-r">
+            <p class="idx">03</p>
+            <span class="tag">Diversão garantida</span>
+            <h3>Quintal Mandica</h3>
+            <p>
+              O espaço queridinho das crianças de todas as idades, com
+              brinquedos incríveis que transformam qualquer evento em pura
+              diversão para a família inteira.
+            </p>
+            <ul class="amen">
+              <li>Brinquedos incríveis</li>
+              <li>Casa na árvore</li>
+              <li>Mini Campinho de Futebol</li>
+              <li>Escorregadores e redes</li>
+              <li>Perfeito para festas infantis</li>
+              <li>Diversão para todas as idades</li>
+            </ul>
+            <a
+              href="https://wa.me/5585999236600?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Quintal%20Mandica."
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              >Quero conhecer</a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="wsep wave-3" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#wave-3" />
+      </svg>
+    </div>
+
+    <!-- ============ EVENTOS POR TIPO ============ -->
+    <section id="eventos" class="eventos">
+      <div class="wrap-wide">
+        <div class="sec-head">
+          <p class="eyebrow reveal">Para cada celebração</p>
+          <h2 class="title reveal">Que evento você vai realizar?</h2>
+          <p class="lead reveal">
+            Escolha o tipo de festa e veja a Casa Mandica pela lente do seu
+            evento — com uma galeria dedicada a cada celebração.
+          </p>
+        </div>
+        <div class="event-grid reveal" id="eventGrid" data-stagger></div>
+      </div>
+    </section>
+
+    <div class="wsep wave-4" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#wave-4" />
+      </svg>
+    </div>
+
+    <!-- ============ TOUR ============ -->
+    <section id="tour" class="tour">
+      <div class="wrap">
+        <p class="eyebrow reveal" style="color: var(--sage-light)">
+          Explore de onde estiver
+        </p>
+        <h2 class="title reveal">Faça um tour virtual 360°</h2>
+        <p class="lead reveal">
+          Caminhe pelos nossos espaços sem sair de casa e conheça cada cantinho
+          antes da sua visita. Ideal também para mostrar o lugar a quem decide
+          com você.
+        </p>
+        <div class="tour-frame reveal">
+          <iframe
+            id="homeTourFrame"
+            src="tour/index.htm"
+            title="Tour virtual 360° da Casa Mandica"
+            loading="lazy"
+            allow="fullscreen; accelerometer; gyroscope; xr-spatial-tracking"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="tour-actions reveal">
+          <a
+            href="tour.html"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-light"
+            >Abrir tour em tela cheia</a
+          >
+          <button class="btn btn-line-light" id="shareTour">
+            <span class="lbl">Compartilhar o tour</span>
+          </button>
+        </div>
+        <p class="tour-note reveal">
+          Um link exclusivo do tour, pronto para enviar pelo WhatsApp aos seus
+          convidados e fornecedores.
+        </p>
+      </div>
+    </section>
+
+    <div class="wsep wave-5" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#wave-5" />
+      </svg>
+    </div>
+
+    <!-- ============ ESTRUTURA ============ -->
+    <section id="estrutura" class="estrutura">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow reveal">Tudo no lugar</p>
+          <h2 class="title reveal">Estrutura completa</h2>
+          <p class="lead reveal">
+            Para que você se preocupe apenas em aproveitar — o resto, a casa
+            cuida.
+          </p>
+        </div>
+        <div class="feat-grid reveal">
+          <button
+            type="button"
+            class="feat feat-click"
+            data-space="casa"
+            data-i="0"
+            aria-label="Ver fotos — Cozinha industrial"
+          >
+            <div class="fic"><b>1</b></div>
+            <h4>Cozinha industrial</h4>
+            <p>Espaço equipado para buffets e equipes de gastronomia.</p>
+            <span class="feat-hint">Ver fotos</span>
+          </button>
+          <button
+            type="button"
+            class="feat feat-click"
+            data-space="casa"
+            data-i="1"
+            aria-label="Ver fotos — Suíte e lounge"
+          >
+            <div class="fic"><b>2</b></div>
+            <h4>Suíte &amp; lounge</h4>
+            <p>Conforto reservado para os anfitriões e momentos de pausa.</p>
+            <span class="feat-hint">Ver fotos</span>
+          </button>
+          <button
+            type="button"
+            class="feat feat-click"
+            data-space="casa"
+            data-i="2"
+            aria-label="Ver fotos — Banheiros para convidados"
+          >
+            <div class="fic"><b>3</b></div>
+            <h4>Banheiros para convidados</h4>
+            <p>Estrutura adequada e bem cuidada para todos.</p>
+            <span class="feat-hint">Ver fotos</span>
+          </button>
+          <button
+            type="button"
+            class="feat feat-click"
+            data-space="ceu"
+            data-i="0"
+            aria-label="Ver fotos — Palco coberto"
+          >
+            <div class="fic"><b>4</b></div>
+            <h4>Palco coberto</h4>
+            <p>Caramanchões que protegem apresentações e cerimônias.</p>
+            <span class="feat-hint">Ver fotos</span>
+          </button>
+          <button
+            type="button"
+            class="feat feat-click"
+            data-space="casa"
+            data-i="3"
+            aria-label="Ver fotos — Estacionamento"
+          >
+            <div class="fic"><b>5</b></div>
+            <h4>Estacionamento</h4>
+            <p>Comodidade e tranquilidade para a chegada dos convidados.</p>
+            <span class="feat-hint">Ver fotos</span>
+          </button>
+          <button
+            type="button"
+            class="feat feat-click"
+            data-space="ceu"
+            data-i="1"
+            aria-label="Ver fotos — Áreas arborizadas"
+          >
+            <div class="fic"><b>6</b></div>
+            <h4>Áreas arborizadas</h4>
+            <p>Verde por toda parte, criando o clima natural da casa.</p>
+            <span class="feat-hint">Ver fotos</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="wsep wave-6" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#wave-6" />
+      </svg>
+    </div>
+
+    <!-- ============ DEPOIMENTOS ============ -->
+    <section id="depoimentos" class="depo">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow reveal">Quem celebrou aqui</p>
+          <h2 class="title reveal">Histórias que ficaram</h2>
+        </div>
+        <div class="depo-grid reveal" data-stagger>
+          <figure class="depo-card reveal">
+            <div class="quote">&ldquo;</div>
+            <blockquote>
+              O Espaço Céu transformou o nosso casamento em algo de outro mundo.
+              As árvores, os arcos, a luz no fim da tarde… foi mágico.
+            </blockquote>
+            <figcaption>
+              <span class="nm">Marina &amp; Rafael</span
+              ><span class="mt">Casamento</span>
+            </figcaption>
+          </figure>
+          <figure class="depo-card reveal">
+            <div class="quote">&ldquo;</div>
+            <blockquote>
+              Fizemos a festa de 1 ano do nosso filho no Quintal Mandica e as
+              crianças não queriam ir embora. Estrutura impecável.
+            </blockquote>
+            <figcaption>
+              <span class="nm">Família Albuquerque</span
+              ><span class="mt">Festa infantil</span>
+            </figcaption>
+          </figure>
+          <figure class="depo-card reveal">
+            <div class="quote">&ldquo;</div>
+            <blockquote>
+              Fizemos a festa de 1 ano do nosso filho no Quintal Mandica e as
+              crianças não queriam ir embora. Estrutura impecável.
+            </blockquote>
+            <figcaption>
+              <span class="nm">Família Albuquerque</span
+              ><span class="mt">Festa infantil</span>
+            </figcaption>
+          </figure>
+          <figure class="depo-card reveal">
+            <div class="quote">&ldquo;</div>
+            <blockquote>
+              Meus 15 anos foram num lugar de conto de fadas. A Casa de
+              Operações deu todo o suporte e a equipe cuidou de cada detalhe.
+            </blockquote>
+            <figcaption>
+              <span class="nm">Helena Castro</span
+              ><span class="mt">15 anos</span>
+            </figcaption>
+          </figure>
+          <figure class="depo-card reveal">
+            <div class="quote">&ldquo;</div>
+            <blockquote>
+              O Espaço Céu transformou o nosso casamento em algo de outro mundo.
+              As árvores, os arcos, a luz no fim da tarde… foi mágico.
+            </blockquote>
+            <figcaption>
+              <span class="nm">Marina &amp; Rafael</span
+              ><span class="mt">Casamento</span>
+            </figcaption>
+          </figure>
+          <figure class="depo-card reveal">
+            <div class="quote">&ldquo;</div>
+            <blockquote>
+              Fizemos a festa de 1 ano do nosso filho no Quintal Mandica e as
+              crianças não queriam ir embora. Estrutura impecável.
+            </blockquote>
+            <figcaption>
+              <span class="nm">Família Albuquerque</span
+              ><span class="mt">Festa infantil</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="depo-controls">
+          <button
+            type="button"
+            class="carousel-btn depo-prev"
+            aria-label="Depoimento anterior"
+          >
+            &larr;
+          </button>
+          <button
+            type="button"
+            class="carousel-btn depo-next"
+            aria-label="Próximo depoimento"
+          >
+            &rarr;
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="wsep wave-7" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#wave-7" />
+      </svg>
+    </div>
+
+    <!-- ============ CONTATO ============ -->
+    <section id="contato" class="contato">
+      <div class="wrap contato-grid">
+        <div class="contato-info reveal reveal-l">
+          <p class="eyebrow">Vamos conversar</p>
+          <h2 class="title" style="margin: 0.3em 0 0.1em">
+            Agende a sua visita
+          </h2>
+          <p class="lead">
+            Venha sentir a energia da Casa Mandica pessoalmente. Será um prazer
+            receber você e planejar juntos o seu evento.
+          </p>
+          <ul class="contato-list">
+            <li>
+              <span class="ci-lbl">Endereço</span
+              ><span
+                >Rua Vicente Leitão, 729 — Eusébio, Ceará · CEP 61760-016</span
+              >
+            </li>
+            <li>
+              <span class="ci-lbl">Telefone &amp; WhatsApp</span
+              ><span
+                ><a
+                  href="https://wa.me/5585999236600"
+                  target="_blank"
+                  rel="noopener"
+                  >(85) 99923-6600</a
+                ></span
+              >
+            </li>
+            <li>
+              <span class="ci-lbl">Instagram</span
+              ><span
+                ><a
+                  href="https://www.instagram.com/casamandica/"
+                  target="_blank"
+                  rel="noopener"
+                  >@casamandica</a
+                ></span
+              >
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/5585999236600?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20%C3%A0%20Casa%20Mandica."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+            >Falar no WhatsApp</a
+          >
+        </div>
+        <div class="contato-map reveal reveal-r">
+          <iframe
+            src="https://www.google.com/maps?q=Rua%20Vicente%20Leit%C3%A3o%20729%20Eus%C3%A9bio%20CE&output=embed"
+            title="Mapa — Casa Mandica"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <div class="wsep wave-8" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <use href="#wave-8" />
+      </svg>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div>
+          <img src="assets/logo.png" alt="Casa Mandica" class="footer-logo" />
+          <p>
+            Espaço para eventos entre árvores, em Eusébio — Ceará. Onde a
+            natureza recebe os seus melhores momentos.
+          </p>
+        </div>
+        <div class="footer-col">
+          <p class="foot-h">Navegação</p>
+          <a href="#espacos">Os Espaços</a>
+          <a href="#eventos">Eventos</a>
+          <a href="#tour">Tour Virtual</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div class="footer-col">
+          <p class="foot-h">Contato</p>
+          <a href="https://wa.me/5585999236600" target="_blank" rel="noopener"
+            >(85) 99923-6600</a
+          >
+          <a
+            href="https://www.instagram.com/casamandica/"
+            target="_blank"
+            rel="noopener"
+            >@casamandica</a
+          >
+          <a
+            href="https://www.google.com/maps?q=Rua%20Vicente%20Leit%C3%A3o%20729%20Eus%C3%A9bio%20CE"
+            target="_blank"
+            rel="noopener"
+            >Como chegar</a
+          >
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span
+          >© <span id="year"></span> Casa Mandica · Todos os direitos
+          reservados</span
+        >
+        <a href="tour.html" target="_blank" rel="noopener">Tour Virtual 360°</a>
+      </div>
+    </footer>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <button class="lb-close" id="lbClose" aria-label="Fechar galeria">
+        &times;
+      </button>
+      <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">
+        &#8249;
+      </button>
+      <div class="lb-stage">
+        <img class="lb-img" id="lbImg" alt="" />
+        <div class="lb-cap">
+          <span id="lbTitle"></span><span class="ct" id="lbCount"></span>
+        </div>
+      </div>
+      <button class="lb-nav lb-next" id="lbNext" aria-label="Próxima">
+        &#8250;
+      </button>
+    </div>
+
+    <script src="js/events.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/tour-menu.js"></script>
+    <script>
+      /* Aqui o tour é só uma prévia (a navegação por nome fica no tour em tela
+         cheia), então a faixa de nomes apenas some quando não cabe — sem
+         seletor, para não competir com o CTA logo abaixo. */
+      (function () {
+        var el = document.getElementById("homeTourFrame");
+        if (el && window.TourMenu) TourMenu.watch(el);
+      })();
+    </script>
+  </body>
+</html>

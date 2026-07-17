@@ -158,7 +158,7 @@ p {
 }
 .sec-head {
   max-width: 660px;
-  margin: 0 auto clamp(40px, 5vw, 64px);
+  margin: 0 auto clamp(40px, 3vw, 50px);
   text-align: center;
 }
 .sec-head .eyebrow {
@@ -169,6 +169,7 @@ p {
 }
 section {
   padding-block: clamp(64px, 9vw, 128px);
+  padding: 8rem 0 4rem 0;
 }
 .header {
   padding-block: 0;
@@ -992,7 +993,7 @@ section {
   grid-template-columns: 1.02fr 0.98fr;
   gap: clamp(32px, 5vw, 76px);
   align-items: center;
-  padding-block: clamp(36px, 5vw, 60px);
+  padding-block: clamp(36px, 4vw, 50px);
 }
 .espaco.rev .espaco-media {
   order: 2;
@@ -1632,6 +1633,8 @@ section {
   box-shadow: var(--shadow);
   aspect-ratio: 4/3.2;
   border: 1px solid var(--line);
+  height: 95%;
+  width: 100%;
 }
 .contato-map iframe {
   width: 100%;

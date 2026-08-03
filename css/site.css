@@ -843,8 +843,12 @@ section {
 }
 .hero-title {
   color: #fff;
-  font-size: clamp(3.6rem, 9vw, 6.5rem);
+  /* "casa mandica" fica sempre em uma linha só: o 14vw é a trava que segura o
+     título dentro da tela nos celulares estreitos, onde o piso de 3.6rem
+     estourava a largura. */
+  font-size: min(clamp(3.6rem, 9vw, 6.5rem), 14vw);
   margin-bottom: 0.18em;
+  white-space: nowrap;
 }
 .hero-sub {
   font-family: var(--serif);
@@ -905,6 +909,27 @@ section {
   }
   .hero-text {
     max-width: 100%;
+  }
+}
+
+/* Desktop: título e subtítulo em uma linha cada. A coluna de texto ganha um
+   pouco de largura (o arco continua com ~415px nas telas grandes) e os corpos
+   são limitados ao que cabe nela — o subtítulo mede 18.19em na Cormorant
+   itálica e o título 5.44em + 1.1px de tracking por letra na Edensor, então as
+   travas abaixo deixam ~8% de folga em qualquer largura a partir de 901px. */
+@media (min-width: 901px) {
+  .hero-inner {
+    grid-template-columns: 1.18fr 0.82fr;
+  }
+  .hero-text {
+    max-width: none;
+  }
+  .hero-title {
+    font-size: min(8vw, 6.2rem);
+  }
+  .hero-sub {
+    font-size: min(2.5vw, 1.9rem);
+    white-space: nowrap;
   }
 }
 .hero-strip {

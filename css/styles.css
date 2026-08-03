@@ -808,7 +808,7 @@
   background: linear-gradient(
     160deg,
     #7e9573 0%,
-    var(--sage-deep) 55%,
+    #4f644a 55%,
     var(--sage-dark) 100%
   );
 }

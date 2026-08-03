@@ -93,8 +93,9 @@
     if (hero) {
       var b = hero.offsetTop + hero.offsetHeight - 90;
       var stateClass = getHeroStateClass();
-      var atTop =
-        !sc && window.scrollY < b && !nav.classList.contains("menu-open");
+      /* o estado depende só da rolagem: abrir o menu no topo não pode tirar o
+         at-top, senão a logo perde o filtro que a deixa branca sobre o hero */
+      var atTop = !sc && window.scrollY < b;
       if (stateClass) {
         nav.classList.toggle(stateClass, atTop);
         ["at-top", "at-hero"].forEach(function (cls) {
@@ -127,8 +128,7 @@
         e.stopPropagation();
         var open = lnk.classList.toggle("open");
         nav.classList.toggle("menu-open", open);
-        if (open) nav.classList.remove("at-top");
-        else closeMenu();
+        if (!open) closeMenu();
       });
       lnk.addEventListener("click", function (e) {
         if (e.target.tagName === "A") {
@@ -265,6 +265,7 @@
   var depoSlider = document.querySelector(".depo-grid");
   if (depoSlider) {
     var depoCards = [].slice.call(depoSlider.querySelectorAll(".depo-card"));
+    var depoViewport = depoSlider.closest(".depo-viewport");
     var depoPrev = document.querySelector(".depo-prev");
     var depoNext = document.querySelector(".depo-next");
     var depoIndex = 0;
@@ -301,12 +302,18 @@
         Math.max(0, depoCards.length - perPage),
       );
     }
+    /* setas e degradês andam juntos: cada lado só fica ativo enquanto sobrar
+       depoimento para aquele lado */
     function updateDepoEdgeClass() {
       var maxScroll = depoSlider.scrollWidth - depoSlider.clientWidth;
-      depoSlider.classList.toggle(
-        "at-end",
-        depoSlider.scrollLeft >= maxScroll - 2,
-      );
+      var atStart = depoSlider.scrollLeft <= 2;
+      var atEnd = maxScroll <= 2 || depoSlider.scrollLeft >= maxScroll - 2;
+      if (depoViewport) {
+        depoViewport.classList.toggle("can-prev", !atStart);
+        depoViewport.classList.toggle("can-next", !atEnd);
+      }
+      if (depoPrev) depoPrev.disabled = atStart;
+      if (depoNext) depoNext.disabled = atEnd;
     }
     function depoScrollTo(index) {
       if (index < 0) index = 0;
@@ -339,6 +346,7 @@
     window.addEventListener("resize", function () {
       updateDepoEdgeClass();
     });
+    window.addEventListener("load", updateDepoEdgeClass);
     depoScrollTo(0);
   }
 

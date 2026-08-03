@@ -1,7 +1,7 @@
 # Customizações do tour
 
 Ajustes feitos por cima do export do 3DVista. **Um novo export sobrescreve tudo
-isto** — se re-exportar do 3DVista, reaplique os três itens abaixo.
+isto** — se re-exportar do 3DVista, reaplique os itens abaixo.
 
 ## 1. Setas no chão (arquivos em `media/`)
 
@@ -118,3 +118,17 @@ dentro do 3DVista, reconferir:
 
     INÍCIO 0 · ESPAÇO CÉU 47 · CASA DE OPERAÇÕES 26 · SUÍTE 35
     ÁREA DE SERVIÇO 38 · QUINTAL MANDICA 21 · GRAMADO 1 · BANHEIROS 12
+
+## 6. Botão do fornecedor removido (em `script.js`)
+
+O canto superior direito trazia um ícone branco (`"name": "IconButton VR"`) que
+abria `https://movex.design` em outra aba — assinatura de quem fez o tour, sem
+função para o visitante. Foram apagadas as duas partes:
+
+- a definição do `IconButton_1B9ADD00_16C4_0505_41B4_B043CA1AA270`;
+- a referência a ele no `children` do container `--SETTINGS`
+  (`Container_EF8F8BD8_E386_8E03_41E3_4CF7CC1F4D8E`).
+
+Não há mais nenhuma referência ao id no projeto. Os três PNGs em
+`skin/IconButton_1B9ADD00_*.png` ficaram no lugar (órfãos) para o caso de
+reverter.

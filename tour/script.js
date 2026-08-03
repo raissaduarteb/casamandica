@@ -19067,7 +19067,6 @@
   "name": "--SETTINGS"
  },
  "children": [
-  "this.IconButton_1B9ADD00_16C4_0505_41B4_B043CA1AA270",
   "this.Container_EF8F8BD8_E386_8E02_41E5_FC5C5513733A",
   "this.Container_EF8F8BD8_E386_8E02_41E5_90850B5F0BBE"
  ],
@@ -26922,39 +26921,6 @@
    "pitch": -7.53
   }
  ]
-},
-{
- "id": "IconButton_1B9ADD00_16C4_0505_41B4_B043CA1AA270",
- "width": 37,
- "transparencyActive": true,
- "minHeight": 1,
- "horizontalAlign": "center",
- "shadow": false,
- "borderSize": 0,
- "right": 23.05,
- "minWidth": 1,
- "maxWidth": 49,
- "top": 28,
- "iconURL": "skin/IconButton_1B9ADD00_16C4_0505_41B4_B043CA1AA270.png",
- "maxHeight": 37,
- "verticalAlign": "middle",
- "paddingRight": 0,
- "paddingLeft": 0,
- "mode": "push",
- "height": 27,
- "click": "this.openLink('https://movex.design', '_blank')",
- "paddingTop": 0,
- "class": "IconButton",
- "backgroundOpacity": 0,
- "borderRadius": 0,
- "paddingBottom": 0,
- "rollOverIconURL": "skin/IconButton_1B9ADD00_16C4_0505_41B4_B043CA1AA270_rollover.png",
- "pressedIconURL": "skin/IconButton_1B9ADD00_16C4_0505_41B4_B043CA1AA270_pressed.png",
- "cursor": "hand",
- "propagateClick": true,
- "data": {
-  "name": "IconButton VR"
- }
 },
 {
  "data": {

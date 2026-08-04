@@ -1289,10 +1289,26 @@ section {
 }
 @media (max-width: 520px) {
   .event-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   .event-card {
-    aspect-ratio: 3.5/4;
+    aspect-ratio: 3/3.8;
+  }
+  .event-card .ev-label {
+    padding: 14px 12px;
+  }
+  .event-card .ev-name {
+    font-size: 1.02rem;
+  }
+  .event-card .ev-go {
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    margin-top: 0.4em;
+  }
+  .event-card .ev-go .ar {
+    width: 9px;
+    height: 11px;
   }
 }
 

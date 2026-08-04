@@ -1784,8 +1784,12 @@ section {
 }
 @media (max-width: 760px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 24px;
+  }
+  /* bloco do logo/descrição ocupa a linha inteira; Navegação e Contato ficam lado a lado */
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
   }
 }
 

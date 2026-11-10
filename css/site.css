@@ -762,8 +762,9 @@ section {
   object-fit: cover;
   object-position: center 60%;
   transform: scale(1.08);
-  transform-origin: 50% 45%;
+  transform-origin: 12% 100%;
   animation: kenburns 22s ease-in-out infinite alternate;
+  filter: contrast(1.2);
 }
 @keyframes kenburns {
   from {
@@ -878,27 +879,189 @@ section {
   width: min(100%, 420px);
   aspect-ratio: 3/4.1;
 }
+/* O arco flutua devagar e o contorno respira em contratempo — assim ele deixa
+   de ser um recorte parado em cima da foto de fundo, que também se move. */
+.hero-arch {
+  position: absolute;
+  inset: 0;
+  animation: arch-float 9s ease-in-out infinite alternate;
+}
+@keyframes arch-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -12px, 0);
+  }
+}
 .hero-arch-frame {
   position: absolute;
   inset: 0;
   border-top-left-radius: 999px;
   border-top-right-radius: 999px;
   overflow: hidden;
-  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #2e341d;
+  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
-.hero-arch-frame img {
+/* Véu no tom do hero: baixa o brilho das fotos claras e escurece a base,
+   onde ficam os controles, para o arco "casar" com o fundo. */
+.hero-arch-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(36, 42, 26, 0.72) 0%,
+      rgba(36, 42, 26, 0.12) 34%,
+      rgba(36, 42, 26, 0) 60%,
+      rgba(36, 42, 26, 0.22) 100%
+    ),
+    radial-gradient(
+      120% 80% at 50% 30%,
+      transparent 55%,
+      rgba(30, 35, 22, 0.35) 100%
+    );
+}
+.ha-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 1.4s var(--ease);
+}
+.ha-slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+.ha-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(0.82) brightness(0.86) contrast(1.04) sepia(0.08);
+  transform: scale(1.12);
+  transition: transform 7s ease-out;
+}
+.ha-slide.is-active img {
+  transform: scale(1.02);
 }
 .hero-arch-outline {
   position: absolute;
   inset: 24px -22px -22px 24px;
-  z-index: -1;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
   border-top-left-radius: 999px;
   border-top-right-radius: 999px;
+  animation: arch-outline 9s ease-in-out infinite alternate;
+}
+@keyframes arch-outline {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.55;
+  }
+  to {
+    transform: translate3d(-8px, 6px, 0);
+    opacity: 0.9;
+  }
+}
+
+/* controles: pílula de vidro discreta na base do arco */
+.ha-nav {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(30, 35, 22, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.ha-btn {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.8;
+  transition:
+    background 0.3s,
+    opacity 0.3s;
+}
+.ha-btn:hover,
+.ha-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  opacity: 1;
+}
+.ha-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ha-dots {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.ha-dot {
+  position: relative;
+  width: 18px;
+  height: 30px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.ha-dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  transition:
+    width 0.4s var(--ease),
+    margin 0.4s var(--ease),
+    background 0.4s;
+}
+.ha-dot.is-active::before {
+  width: 16px;
+  margin-left: -8px;
+  background: #fff;
+}
+.ha-btn:focus-visible,
+.ha-dot:focus-visible {
+  outline: 1.5px solid #fff;
+  outline-offset: 1px;
+  border-radius: 999px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-arch,
+  .hero-arch-outline {
+    animation: none;
+  }
+  .ha-slide,
+  .ha-slide img {
+    transition: none;
+  }
 }
 @media (max-width: 900px) {
   .hero-inner {

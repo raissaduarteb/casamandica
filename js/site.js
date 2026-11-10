@@ -7,33 +7,75 @@
     casa: {
       title: "Casa de Operações",
       shots: [
-        { src: P + "casa-fachada.jpg", cap: "Fachada colonial e varanda" },
         {
-          src: P + "casa-varanda-colunas.jpg",
-          cap: "Colunas e jardim de espadas-de-são-jorge",
+          src: P + "/casa-de-operacoes/casa-casamandica.jpg",
+          cap: "Fachada colonial e varanda",
         },
         {
-          src: P + "casa-varanda-clara.jpg",
+          src: P + "/casa-de-operacoes/casacentral.jpg",
+          cap: "Casa Vista Central",
+        },
+        {
+          src: P + "/casa-de-operacoes/casacolonial-casamandica.jpg",
           cap: "Varanda e caminho arborizado",
         },
         {
-          src: P + "casa-varanda-jardim.jpg",
+          src: P + "/casa-de-operacoes/casalateral.jpg",
           cap: "Vista da varanda para o quintal",
+        },
+        {
+          src: P + "/casa-de-operacoes/casa-vistalateral.jpg",
+          cap: "Vista lateral da varanda",
+        },
+        {
+          src: P + "/casa-de-operacoes/casa-vistasuperior.jpg",
+          cap: "Vista superior da varanda",
+        },
+        {
+          src: P + "/casa-de-operacoes/casa-janelas.jpg",
+          cap: "Detalhes especiais",
         },
       ],
     },
     ceu: {
       title: "Espaço Céu",
       shots: [
-        { src: P + "ceu-arcos-casa.jpg", cap: "Arcos de pedra e gramado" },
-        { src: P + "ceu-arcos-palmeira.jpg", cap: "Arcos entre as palmeiras" },
         {
-          src: P + "ceu-luzes-gramado.jpg",
-          cap: "Varais de luz sobre o gramado",
+          src: P + "/espaco-ceu/arcos-casamandica.jpg",
+          cap: "Arcos de pedra e arborização",
         },
         {
-          src: P + "ceu-lampiao.jpg",
-          cap: "Lampião de ferro na parede de pedra",
+          src: P + "/espaco-ceu/caramanchoes-casamandica.jpg",
+          cap: "Palco com caramanchões",
+        },
+        {
+          src: P + "/espaco-ceu/DSC00883.jpg",
+          cap: "Vista dos arcos no fim de tarde",
+        },
+        {
+          src: P + "/espaco-ceu/DSC00808.jpg",
+          cap: "",
+        },
+
+        {
+          src: P + "/espaco-ceu/DSC00881.jpg",
+          cap: "",
+        },
+        {
+          src: P + "/espaco-ceu/DSC00899.jpg",
+          cap: "",
+        },
+        {
+          src: P + "/espaco-ceu/DSC00901.jpg",
+          cap: "",
+        },
+        {
+          src: P + "/espaco-ceu/DSC00977.jpg",
+          cap: "Vista da entrada da Casa Mandica",
+        },
+        {
+          src: P + "/espaco-ceu/arcos com caramachao-casamandica.jpg",
+          cap: "",
         },
       ],
     },
@@ -41,23 +83,67 @@
       title: "Quintal Mandica",
       shots: [
         {
-          src: P + "quintal-casinha-escorregador.jpg",
-          cap: "Casa na árvore e escorregadores",
+          src: P + "/quintal-mandica/brinquedos-casamandica.jpg",
+          cap: "",
         },
         {
-          src: P + "quintal-brinquedos.jpg",
-          cap: "Brinquedos sob as mangueiras",
+          src: P + "/quintal-mandica/quintalmandica839.jpg",
+          cap: "Casa na árvore",
         },
         {
-          src: P + "quintal-escorregadores.jpg",
+          src: P + "/quintal-mandica/quintalmandica918.jpg",
+          cap: "Campinho de futebol",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica857.jpg",
           cap: "Escorregadores coloridos",
         },
-        { src: P + "quintal-tunel-azul.jpg", cap: "Túnel de obstáculos" },
         {
-          src: P + "quintal-escorregador-verde.jpg",
-          cap: "Escorregador e redes",
+          src: P + "/quintal-mandica/quintalmandica863.jpg",
+          cap: "Túnel de obstáculos",
         },
-        { src: P + "quintal-rede.jpg", cap: "Cama de rede entre as árvores" },
+
+        {
+          src: P + "/quintal-mandica/quintalmandica870.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica903.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
+
+        {
+          src: P + "/quintal-mandica/quintalmandica916.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica922.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica929.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica938.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica942.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica946.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica960.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica966.jpg",
+          cap: "Cama de rede entre as árvores",
+        },
       ],
     },
   };
@@ -443,6 +529,68 @@
       el.style.transform = "translate3d(0," + sy * sp + "px,0)";
     });
   }
+
+  /* ---------- hero arch slider ---------- */
+  (function () {
+    var root = document.getElementById("heroArch");
+    if (!root) return;
+    var slides = [].slice.call(root.querySelectorAll(".ha-slide"));
+    var dots = [].slice.call(root.querySelectorAll(".ha-dot"));
+    if (slides.length < 2) return;
+    var cur = 0;
+    var timer = null;
+    var DELAY = 5500;
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function go(n) {
+      cur = (n + slides.length) % slides.length;
+      slides.forEach(function (s, i) {
+        var on = i === cur;
+        s.classList.toggle("is-active", on);
+        s.setAttribute("aria-hidden", on ? "false" : "true");
+      });
+      dots.forEach(function (d, i) {
+        d.classList.toggle("is-active", i === cur);
+        if (i === cur) d.setAttribute("aria-current", "true");
+        else d.removeAttribute("aria-current");
+      });
+    }
+    function stop() {
+      clearInterval(timer);
+      timer = null;
+    }
+    function play() {
+      if (still) return;
+      stop();
+      timer = setInterval(function () {
+        go(cur + 1);
+      }, DELAY);
+    }
+
+    root.querySelectorAll(".ha-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        go(cur + parseInt(b.getAttribute("data-dir"), 10));
+        play();
+      });
+    });
+    dots.forEach(function (d, i) {
+      d.addEventListener("click", function () {
+        go(i);
+        play();
+      });
+    });
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", play);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", play);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stop();
+      else play();
+    });
+
+    go(0);
+    play();
+  })();
 
   /* ---------- share tour ---------- */
   var share = document.getElementById("shareTour");

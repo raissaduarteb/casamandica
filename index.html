@@ -194,8 +194,8 @@
     <header class="hero" id="topo">
       <div class="hero-media" id="heroMedia" data-parallax="0.18">
         <img
-          src="photos/ceu-arcos-casa.jpg"
-          alt="Arcos de pedra e a casa colonial da Casa Mandica entre o gramado e as árvores"
+          src="photos/espaco-ceu/arcoscentral-casamandica.jpg"
+          alt="Arcos de pedra"
           fetchpriority="high"
         />
       </div>
@@ -227,11 +227,87 @@
             <a href="#tour" class="btn btn-line-light">Tour virtual</a>
           </div>
         </div>
-        <div class="hero-art reveal reveal-r" aria-hidden="true">
-          <div class="hero-arch-frame">
-            <img src="photos/festa-baloes-noite.jpg" alt="" />
+        <div class="hero-art reveal reveal-r">
+          <div
+            class="hero-arch"
+            id="heroArch"
+            role="region"
+            aria-roledescription="carrossel"
+            aria-label="Fotos da Casa Mandica"
+          >
+            <span class="hero-arch-outline" aria-hidden="true"></span>
+            <div class="hero-arch-frame">
+              <figure class="ha-slide is-active">
+                <img src="photos/letreiro-casamandica.jpg" alt="Letreiro" />
+              </figure>
+              <figure class="ha-slide">
+                <img
+                  src="photos/espaco-ceu/arcos com caramachao-casamandica.jpg"
+                  alt="Arco de balões iluminado em uma festa à noite"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="ha-slide">
+                <img
+                  src="photos/casa-de-operacoes/casacolonial-casamandica.jpg"
+                  alt="Varanda da casa colonial com colunas brancas"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="ha-slide">
+                <img
+                  src="photos/quintal-mandica/brinquedos-casamandica.jpg"
+                  alt="Lampião aceso no muro de pedra ao entardecer"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+            <div class="ha-nav">
+              <button
+                type="button"
+                class="ha-btn"
+                data-dir="-1"
+                aria-label="Foto anterior"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14.5 6 9 12l5.5 6" />
+                </svg>
+              </button>
+              <div class="ha-dots">
+                <button
+                  type="button"
+                  class="ha-dot is-active"
+                  aria-label="Foto 1"
+                  aria-current="true"
+                ></button>
+                <button
+                  type="button"
+                  class="ha-dot"
+                  aria-label="Foto 2"
+                ></button>
+                <button
+                  type="button"
+                  class="ha-dot"
+                  aria-label="Foto 3"
+                ></button>
+                <button
+                  type="button"
+                  class="ha-dot"
+                  aria-label="Foto 4"
+                ></button>
+              </div>
+              <button
+                type="button"
+                class="ha-btn"
+                data-dir="1"
+                aria-label="Próxima foto"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.5 6 15 12l-5.5 6" />
+                </svg>
+              </button>
+            </div>
           </div>
-          <span class="hero-arch-outline"></span>
         </div>
       </div>
       <div class="hero-strip">

@@ -1,4 +1,10 @@
-/* Shared event-type data for Casa Mandica */
+/* Shared event-type data for Casa Mandica
+
+   Créditos de fotografia:
+   - `credit` / `creditUrl` no evento valem para todas as fotos dele;
+   - para uma foto de outro fotógrafo, coloque na própria foto:
+       { src: P + "foto.jpg", credit: "Nome", creditUrl: "https://instagram.com/..." }
+   - deixe vazio ("") para não mostrar crédito. */
 var P = "photos/";
 window.CASA_EVENTS = [
   {
@@ -10,6 +16,8 @@ window.CASA_EVENTS = [
       "Imagine dizer “sim” sob caramanchões, cercado de verde e do brilho suave do entardecer. No Espaço Céu, cada cerimônia ganha a grandiosidade da natureza e o aconchego de uma casa que recebe bem.",
     space: "Espaço Céu",
     cover: P + "ceu-luzes-gramado.jpg",
+    credit: "", // fotógrafo(a) padrão das fotos deste evento
+    creditUrl: "", // opcional: Instagram ou site do fotógrafo(a)
     shots: [
       { src: P + "ceu-luzes-gramado.jpg" },
       { src: P + "ceu-arcos-casa.jpg" },
@@ -28,6 +36,8 @@ window.CASA_EVENTS = [
       "Dos preparativos na suíte à valsa sob as estrelas, a Casa Mandica transforma os 15 anos em um conto de fadas real — com estrutura completa para a debutante e todos os convidados.",
     space: "Casa de Operações + Espaço Céu",
     cover: P + "festa-baloes-noite.jpg",
+    credit: "", // fotógrafo(a) padrão das fotos deste evento
+    creditUrl: "", // opcional: Instagram ou site do fotógrafo(a)
     shots: [
       { src: P + "festa-baloes-noite.jpg" },
       { src: P + "ceu-luzes-gramado.jpg" },
@@ -45,12 +55,15 @@ window.CASA_EVENTS = [
       "Seja um jantar intimista na varanda colonial ou uma grande festa ao ar livre, a Casa Mandica se adapta ao clima da sua comemoração com charme e versatilidade.",
     space: "Todos os espaços",
     cover: P + "/aniversários/aniversarios6.jpeg",
+    credit: "Paulo Henrique", // fotógrafo(a) padrão das fotos deste evento
+    creditUrl: "instagram.com", // opcional: Instagram ou site do fotógrafo(a)
     shots: [
       { src: P + "/aniversários/aniversarios.jpg" },
       { src: P + "/aniversários/aniversarios2.jpeg" },
       { src: P + "/aniversários/aniversarios3.jpeg" },
       { src: P + "/aniversários/aniversarios4.jpeg" },
       { src: P + "/aniversários/aniversarios5.jpeg" },
+      { src: P + "/aniversários/aniversarios6.jpeg" },
       { src: P + "/aniversários/aniversarios7.jpeg" },
     ],
   },
@@ -63,6 +76,8 @@ window.CASA_EVENTS = [
       "No Quintal Mandica, gramado e brinquedos incríveis garantem horas de diversão. Um espaço seguro e encantador onde a criançada brinca à vontade enquanto os adultos relaxam.",
     space: "Quintal Mandica",
     cover: P + "quintal-casinha-escorregador.jpg",
+    credit: "", // fotógrafo(a) padrão das fotos deste evento
+    creditUrl: "", // opcional: Instagram ou site do fotógrafo(a)
     shots: [
       { src: P + "quintal-casinha-escorregador.jpg" },
       { src: P + "quintal-brinquedos.jpg" },
@@ -81,6 +96,8 @@ window.CASA_EVENTS = [
       "Confraternizações, lançamentos e convenções ganham um ar diferente ao ar livre. O palco coberto vira auditório e o ambiente arborizado inspira conexão e leveza para a sua equipe.",
     space: "Espaço Céu",
     cover: P + "ceu-arcos-casa.jpg",
+    credit: "", // fotógrafo(a) padrão das fotos deste evento
+    creditUrl: "", // opcional: Instagram ou site do fotógrafo(a)
     shots: [
       { src: P + "ceu-arcos-casa.jpg" },
       { src: P + "ceu-luzes-gramado.jpg" },
@@ -97,6 +114,8 @@ window.CASA_EVENTS = [
       "Da colação à festa, a Casa Mandica oferece espaço e estrutura para reunir formandos, famílias e amigos numa noite inesquecível de celebração.",
     space: "Espaço Céu",
     cover: P + "ceu-lampiao.jpg",
+    credit: "", // fotógrafo(a) padrão das fotos deste evento
+    creditUrl: "", // opcional: Instagram ou site do fotógrafo(a)
     shots: [
       { src: P + "ceu-luzes-gramado.jpg" },
       { src: P + "festa-baloes-noite.jpg" },
@@ -113,6 +132,8 @@ window.CASA_EVENTS = [
       "Receba quem você ama para revelar o grande segredo ou celebrar a chegada do bebê, num cenário natural e afetuoso, cheio de detalhes para fotos lindas.",
     space: "Casa de Operações",
     cover: P + "casa-varanda-colunas.jpg",
+    credit: "", // fotógrafo(a) padrão das fotos deste evento
+    creditUrl: "", // opcional: Instagram ou site do fotógrafo(a)
     shots: [
       { src: P + "casa-varanda-colunas.jpg" },
       { src: P + "casa-varanda-clara.jpg" },
@@ -129,6 +150,8 @@ window.CASA_EVENTS = [
       "Arcos, árvores, varanda colonial e o brilho dos lampiões: a Casa Mandica é um estúdio a céu aberto, perfeito para ensaios de gestante, família, casais e books.",
     space: "Todos os espaços",
     cover: P + "ceu-arcos-palmeira.jpg",
+    credit: "", // fotógrafo(a) padrão das fotos deste evento
+    creditUrl: "", // opcional: Instagram ou site do fotógrafo(a)
     shots: [
       { src: P + "ceu-arcos-palmeira.jpg" },
       { src: P + "ceu-lampiao.jpg" },

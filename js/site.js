@@ -448,6 +448,22 @@
     lbImg.src = s.src;
     lbImg.alt = s.cap || "";
     if (lbTitle) lbTitle.textContent = s.cap || "";
+    var lbCredit = document.getElementById("lbCredit");
+    if (lbCredit) {
+      lbCredit.textContent = "";
+      lbCredit.hidden = !s.credit;
+      if (s.credit) {
+        lbCredit.appendChild(document.createTextNode("Foto: "));
+        if (/^https?:\/\//.test(s.creditUrl || "")) {
+          var a = document.createElement("a");
+          a.href = s.creditUrl;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = s.credit;
+          lbCredit.appendChild(a);
+        } else lbCredit.appendChild(document.createTextNode(s.credit));
+      }
+    }
     if (lbCount) lbCount.textContent = ST.i + 1 + " / " + ST.list.length;
   }
   function lbOpen(list, i) {

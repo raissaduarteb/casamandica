@@ -8,31 +8,31 @@
       title: "Casa de Operações",
       shots: [
         {
-          src: P + "/casa-de-operacoes/casa-casamandica.jpg",
+          src: P + "/casa-de-operacoes/casa-casamandica.webp",
           cap: "Fachada colonial e varanda",
         },
         {
-          src: P + "/casa-de-operacoes/casacentral.jpg",
+          src: P + "/casa-de-operacoes/casacentral.webp",
           cap: "Casa Vista Central",
         },
         {
-          src: P + "/casa-de-operacoes/casacolonial-casamandica.jpg",
+          src: P + "/casa-de-operacoes/casacolonial-casamandica.webp",
           cap: "Varanda e caminho arborizado",
         },
         {
-          src: P + "/casa-de-operacoes/casalateral.jpg",
+          src: P + "/casa-de-operacoes/casalateral.webp",
           cap: "Vista da varanda para o quintal",
         },
         {
-          src: P + "/casa-de-operacoes/casa-vistalateral.jpg",
+          src: P + "/casa-de-operacoes/casa-vistalateral.webp",
           cap: "Vista lateral da varanda",
         },
         {
-          src: P + "/casa-de-operacoes/casa-vistasuperior.jpg",
+          src: P + "/casa-de-operacoes/casa-vistasuperior.webp",
           cap: "Vista superior da varanda",
         },
         {
-          src: P + "/casa-de-operacoes/casa-janelas.jpg",
+          src: P + "/casa-de-operacoes/casa-janelas.webp",
           cap: "Detalhes especiais",
         },
       ],
@@ -83,65 +83,65 @@
       title: "Quintal Mandica",
       shots: [
         {
-          src: P + "/quintal-mandica/brinquedos-casamandica.jpg",
+          src: P + "/quintal-mandica/brinquedos-casamandica.webp",
           cap: "",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica839.jpg",
+          src: P + "/quintal-mandica/quintalmandica839.webp",
           cap: "Casa na árvore",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica918.jpg",
+          src: P + "/quintal-mandica/quintalmandica918.webp",
           cap: "Campinho de futebol",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica857.jpg",
+          src: P + "/quintal-mandica/quintalmandica857.webp",
           cap: "Escorregadores coloridos",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica863.jpg",
+          src: P + "/quintal-mandica/quintalmandica863.webp",
           cap: "Túnel de obstáculos",
         },
 
         {
-          src: P + "/quintal-mandica/quintalmandica870.jpg",
+          src: P + "/quintal-mandica/quintalmandica870.webp",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica903.jpg",
+          src: P + "/quintal-mandica/quintalmandica903.webp",
           cap: "Cama de rede entre as árvores",
         },
 
         {
-          src: P + "/quintal-mandica/quintalmandica916.jpg",
+          src: P + "/quintal-mandica/quintalmandica916.webp",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica922.jpg",
+          src: P + "/quintal-mandica/quintalmandica922.webp",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica929.jpg",
+          src: P + "/quintal-mandica/quintalmandica929.webp",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica938.jpg",
+          src: P + "/quintal-mandica/quintalmandica938.webp",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica942.jpg",
+          src: P + "/quintal-mandica/quintalmandica942.webp",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica946.jpg",
+          src: P + "/quintal-mandica/quintalmandica946.webp",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica960.jpg",
+          src: P + "/quintal-mandica/quintalmandica960.webp",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica966.jpg",
+          src: P + "/quintal-mandica/quintalmandica966.webp",
           cap: "Cama de rede entre as árvores",
         },
       ],

@@ -173,9 +173,10 @@
   }
   function imgEl(src, alt) {
     var i = new Image();
-    i.src = src;
+    i.loading = "lazy"; /* precisa vir antes do src, senão o navegador baixa na hora */
+    i.decoding = "async";
     i.alt = alt || "";
-    i.loading = "lazy";
+    i.src = src;
     return i;
   }
 
@@ -317,7 +318,6 @@
     pm.setAttribute("data-space", key);
     pm.setAttribute("data-i", "0");
     console.log(g);
-    console.log(imgEl(g.shots[0].src, g.title));
 
     pm.appendChild(imgEl(g.shots[0].src, g.title));
     pm.appendChild(badge(g.shots.length));

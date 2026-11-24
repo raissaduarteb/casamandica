@@ -8,31 +8,31 @@
       title: "Casa de Operações",
       shots: [
         {
-          src: P + "/casa-de-operacoes/casa-casamandica.webp",
+          src: P + "/casa-de-operacoes/casa-casamandica.jpg",
           cap: "Fachada colonial e varanda",
         },
         {
-          src: P + "/casa-de-operacoes/casacentral.webp",
+          src: P + "/casa-de-operacoes/casacentral.jpg",
           cap: "Casa Vista Central",
         },
         {
-          src: P + "/casa-de-operacoes/casacolonial-casamandica.webp",
+          src: P + "/casa-de-operacoes/casacolonial-casamandica.jpg",
           cap: "Varanda e caminho arborizado",
         },
         {
-          src: P + "/casa-de-operacoes/casalateral.webp",
+          src: P + "/casa-de-operacoes/casalateral.jpg",
           cap: "Vista da varanda para o quintal",
         },
         {
-          src: P + "/casa-de-operacoes/casa-vistalateral.webp",
+          src: P + "/casa-de-operacoes/casa-vistalateral.jpg",
           cap: "Vista lateral da varanda",
         },
         {
-          src: P + "/casa-de-operacoes/casa-vistasuperior.webp",
+          src: P + "/casa-de-operacoes/casa-vistasuperior.jpg",
           cap: "Vista superior da varanda",
         },
         {
-          src: P + "/casa-de-operacoes/casa-janelas.webp",
+          src: P + "/casa-de-operacoes/casa-janelas.jpg",
           cap: "Detalhes especiais",
         },
       ],
@@ -83,66 +83,83 @@
       title: "Quintal Mandica",
       shots: [
         {
-          src: P + "/quintal-mandica/brinquedos-casamandica.webp",
+          src: P + "/quintal-mandica/brinquedos-casamandica.jpg",
           cap: "",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica839.webp",
+          src: P + "/quintal-mandica/quintalmandica839.jpg",
           cap: "Casa na árvore",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica918.webp",
+          src: P + "/quintal-mandica/quintalmandica918.jpg",
           cap: "Campinho de futebol",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica857.webp",
+          src: P + "/quintal-mandica/quintalmandica857.jpg",
           cap: "Escorregadores coloridos",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica863.webp",
+          src: P + "/quintal-mandica/quintalmandica863.jpg",
           cap: "Túnel de obstáculos",
         },
 
         {
-          src: P + "/quintal-mandica/quintalmandica870.webp",
+          src: P + "/quintal-mandica/quintalmandica870.jpg",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica903.webp",
+          src: P + "/quintal-mandica/quintalmandica903.jpg",
           cap: "Cama de rede entre as árvores",
         },
 
         {
-          src: P + "/quintal-mandica/quintalmandica916.webp",
+          src: P + "/quintal-mandica/quintalmandica916.jpg",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica922.webp",
+          src: P + "/quintal-mandica/quintalmandica922.jpg",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica929.webp",
+          src: P + "/quintal-mandica/quintalmandica929.jpg",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica938.webp",
+          src: P + "/quintal-mandica/quintalmandica938.jpg",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica942.webp",
+          src: P + "/quintal-mandica/quintalmandica942.jpg",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica946.webp",
+          src: P + "/quintal-mandica/quintalmandica946.jpg",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica960.webp",
+          src: P + "/quintal-mandica/quintalmandica960.jpg",
           cap: "Cama de rede entre as árvores",
         },
         {
-          src: P + "/quintal-mandica/quintalmandica966.webp",
+          src: P + "/quintal-mandica/quintalmandica966.jpg",
           cap: "Cama de rede entre as árvores",
+        },
+      ],
+    },
+    estacionamento: {
+      title: "Estacionamento",
+      shots: [
+        {
+          src: P + "letreiro-casamandica.jpg",
+          cap: "Teste",
+        },
+        {
+          src: P + "/espaco-ceu/caramanchoes-casamandica.jpg",
+          cap: "Palco com caramanchões",
+        },
+        {
+          src: P + "/espaco-ceu/DSC00883.jpg",
+          cap: "Vista dos arcos no fim de tarde",
         },
       ],
     },
@@ -292,12 +309,16 @@
   document.querySelectorAll(".espaco-media[data-space]").forEach(function (m) {
     var key = m.getAttribute("data-space"),
       g = SPACES[key];
+
     if (!g) return;
     var stack = ce("div", "em-stack");
     var main = ce("div", "em-main archtop");
     var pm = ce("div", "ph-img");
     pm.setAttribute("data-space", key);
     pm.setAttribute("data-i", "0");
+    console.log(g);
+    console.log(imgEl(g.shots[0].src, g.title));
+
     pm.appendChild(imgEl(g.shots[0].src, g.title));
     pm.appendChild(badge(g.shots.length));
     main.appendChild(pm);
@@ -490,6 +511,9 @@
       e.target.closest(
         ".espaco-media [data-space][data-i], .feat[data-space][data-i]",
       );
+
+    console.log(sp);
+
     if (sp) {
       var g = SPACES[sp.getAttribute("data-space")];
       if (g) lbOpen(g.shots, parseInt(sp.getAttribute("data-i"), 10) || 0);

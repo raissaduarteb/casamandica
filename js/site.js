@@ -146,6 +146,70 @@
         },
       ],
     },
+    cozinha: {
+      title: "Cozinha industrial",
+      shots: [
+        {
+          src:
+            P +
+            "cozinha industrial/WhatsApp Image 2026-11-24 at 14.18.57 (1).jpeg",
+          cap: "Cozinha industrial",
+        },
+        {
+          src:
+            P +
+            "cozinha industrial/WhatsApp Image 2026-11-24 at 14.18.57 (2).jpeg",
+          cap: "Cozinha industrial",
+        },
+        {
+          src:
+            P +
+            "cozinha industrial/WhatsApp Image 2026-11-24 at 14.18.58 (1).jpeg",
+          cap: "Cozinha industrial",
+        },
+        {
+          src:
+            P + "cozinha industrial/WhatsApp Image 2026-11-24 at 14.18.58.jpeg",
+          cap: "Cozinha industrial",
+        },
+      ],
+    },
+    suite: {
+      title: "Suíte & lounge",
+      shots: [
+        {
+          src: P + "suite e lounge/WhatsApp Image 2026-11-24 at 14.18.54.jpeg",
+          cap: "Suíte",
+        },
+        {
+          src: P + "suite e lounge/WhatsApp Image 2026-11-24 at 14.18.57.jpeg",
+          cap: "Lounge",
+        },
+        {
+          src:
+            P + "suite e lounge/WhatsApp Image 2026-11-24 at 14.18.58 (3).jpeg",
+          cap: "Banheiro da Suíte",
+        },
+        {
+          src:
+            P + "suite e lounge/WhatsApp Image 2026-11-24 at 14.18.58 (4).jpeg",
+          cap: "Suíte",
+        },
+      ],
+    },
+    banheiro: {
+      title: "Banheiros para convidados",
+      shots: [
+        {
+          src: P + "banheiro/WhatsApp Image 2026-11-24 at 14.18.58 (2).jpeg",
+          cap: "Banheiros para convidados",
+        },
+        {
+          src: P + "banheiro/WhatsApp Image 2026-11-24 at 14.18.59.jpeg",
+          cap: "Banheiros para convidados",
+        },
+      ],
+    },
     estacionamento: {
       title: "Estacionamento",
       shots: [
@@ -163,6 +227,44 @@
         },
       ],
     },
+    palcoCoberto: {
+      title: "Palco coberto",
+      shots: [
+        {
+          src: P + "/casa-de-operacoes/casacentral.jpg",
+          cap: "Palco coberto",
+        },
+        {
+          src: P + "/casa-de-operacoes/casa-vistalateral.jpg",
+          cap: "Vista lateral",
+        },
+        {
+          src: P + "/aniversários/20260301_165249.jpg",
+          cap: "Decoração no palco coberto",
+        },
+      ],
+    },
+    areasArborizadas: {
+      title: "Áreas arborizadas",
+      shots: [
+        {
+          src: P + "/espaco-ceu/arcos-casamandica.jpg",
+          cap: "Arcos de pedra e arborização",
+        },
+        {
+          src: P + "/espaco-ceu/caramanchoes-casamandica.jpg",
+          cap: "Palco com caramanchões",
+        },
+        {
+          src: P + "/espaco-ceu/DSC00883.jpg",
+          cap: "Vista dos arcos no fim de tarde",
+        },
+        {
+          src: P + "/quintal-mandica/quintalmandica870.jpg",
+          cap: "Quintal Mandica",
+        },
+      ],
+    },
   };
 
   function ce(t, c, h) {
@@ -173,7 +275,8 @@
   }
   function imgEl(src, alt) {
     var i = new Image();
-    i.loading = "lazy"; /* precisa vir antes do src, senão o navegador baixa na hora */
+    i.loading =
+      "lazy"; /* precisa vir antes do src, senão o navegador baixa na hora */
     i.decoding = "async";
     i.alt = alt || "";
     i.src = src;
